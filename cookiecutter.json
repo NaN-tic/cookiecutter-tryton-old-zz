@@ -1,0 +1,15 @@
+{
+    "module_name": "my_module",
+    "prefix": "trytonspain",
+    "package_name": "{% if not cookiecutter.prefix %}trytond_{{ cookiecutter.module_name }}{% else %}{{ cookiecutter.prefix }}_{{ cookiecutter.module_name }}{% endif %}",
+    "version": "3.8",
+    "description": "",
+    "author": "TrytonSpain",
+    "author_email": "",
+    "fullname": "TrytonSpain",
+    "year": 2016,
+    "url": "https://bitbucket.org/trytonspain/",
+    "keywords": "",
+    "test_with_scenario": "",
+    "download": "trytonspain"
+}
