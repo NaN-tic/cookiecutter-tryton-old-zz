@@ -1,16 +1,16 @@
-{% if not cookiecutter.prefix -%}
-# This file is part of Tryton.  The COPYRIGHT file at the top level of
-# this repository contains the full copyright notices and license terms.
-
-{% endif -%}
+# This file is part {{ cookiecutter.module_name }} module for Tryton.
+# The COPYRIGHT file at the top level of this repository contains
+# the full copyright notices and license terms.
 import unittest
 {% if cookiecutter.test_with_scenario %}
 import doctest
 {%- endif %}
 
-import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
+from trytond.tests.test_tryton import suite as test_suite
+{%- if cookiecutter.test_with_scenario %}
 from trytond.tests.test_tryton import doctest_setup, doctest_teardown
+{%- endif %}
 
 
 class {{ cookiecutter.module_name.replace('_', ' ').title().replace(' ', '') }}TestCase(ModuleTestCase):
@@ -19,7 +19,7 @@ class {{ cookiecutter.module_name.replace('_', ' ').title().replace(' ', '') }}T
 
 
 def suite():
-    suite = trytond.tests.test_tryton.suite()
+    suite = test_suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
             {{ cookiecutter.module_name.replace('_', ' ').title().replace(' ', '') }}TestCase))
     {%- if cookiecutter.test_with_scenario %}
