@@ -44,10 +44,10 @@ for dep in info.get('depends', []):
     if not re.match(r'(ir|res)(\W|$)', dep):
 {%- if not cookiecutter.prefix %}
         requires.append(get_require_version('trytond_%s' % dep))
-{%- else -%}
+{% else %}
         prefix = MODULE2PREFIX.get(dep, 'trytond')
         requires.append(get_require_version('%s_%s' % (prefix, dep)))
-{%- endif %}
+{% endif -%}
 requires.append(get_require_version('trytond'))
 
 {% if cookiecutter.test_with_scenario == 'y' -%}
@@ -65,7 +65,7 @@ setup(name=name,
     description='{{ cookiecutter.description }}',
     long_description=read('README'),
     author='{{ cookiecutter.author }}',
-    {% if cookiecutter.author_email -%}author_email='{{ cookiecutter.author_email }}',{%- endif %}
+    {%- if cookiecutter.author_email -%}author_email='{{ cookiecutter.author_email }}',{%- endif %}
     url='{{ cookiecutter.url }}',
     download_url=download_url,
     keywords='{{ cookiecutter.keywords }}',
