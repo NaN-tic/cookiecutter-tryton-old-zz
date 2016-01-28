@@ -7,8 +7,8 @@ Installing
 ----------
 
 See INSTALL
+{% if not cookiecutter.prefix %}
 
-{% if not cookiecutter.prefix -%}
 Support
 -------
 
@@ -19,7 +19,7 @@ questions on the Tryton bug tracker, mailing list, wiki or IRC channel:
   http://groups.tryton.org/
   http://wiki.tryton.org/
   irc://irc.freenode.net/tryton
-{%- endif %}
+{% endif %}
 
 License
 -------
