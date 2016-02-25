@@ -1,15 +1,15 @@
 {
     "module_name": "my_module",
-    "prefix": "trytonspain",
+    "prefix": "trytonzz",
     "package_name": "{% if not cookiecutter.prefix %}trytond_{{ cookiecutter.module_name }}{% else %}{{ cookiecutter.prefix }}_{{ cookiecutter.module_name }}{% endif %}",
     "version": "3.8.0",
     "description": "",
-    "author": "TrytonSpain",
+    "author": "Zikzakmedia SL",
     "author_email": "",
-    "fullname": "TrytonSpain",
+    "fullname": "Zikzakmedia",
     "year": 2016,
-    "url": "https://bitbucket.org/trytonspain/",
+    "url": "https://bitbucket.org/zikzakmedia/",
     "keywords": "",
     "test_with_scenario": "",
-    "download": "trytonspain"
+    "download": "zikzakmedia"
 }
