@@ -127,5 +127,7 @@ setup(name=name,
     test_loader='trytond.test_loader:Loader',
     tests_require=tests_require,
     use_2to3=True,
-    convert_2to3_doctests=[],
+{%- if cookiecutter.test_with_scenario == 'y' %}
+    convert_2to3_doctests=['tests/scenario_{{ cookiecutter.module_name }}.rst'],
+{%- endif %}
     )
