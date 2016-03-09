@@ -68,7 +68,7 @@ if minor_version % 2:
 
 setup(name=name,
     version=version,
-    description='{{ cookiecutter.description }}',
+    description='Tryton {{ cookiecutter.description or cookiecutter.module_name.replace('_', ' ').title() }} Module',
     long_description=read('README'),
     author='{{ cookiecutter.author }}',
     {%- if cookiecutter.author_email -%}author_email='{{ cookiecutter.author_email }}',{%- endif %}
